@@ -1,0 +1,11 @@
+artifacts_root: artifacts
+
+data_ingestion:
+  root_dir: artifacts/data_ingestion # Root directory where data will be stored
+  secure_connect_bundle: C:/Users/HP/Downloads/secure-connect-aqi-data.zip # Path to the secure connect bundle for connecting to AstraDB
+  username: rrZYZBZexcDmqhvdMXzAjjkS  # AstraDB username
+  password: N+E7CGXrkXv3JmGoWrc401.hG2UoQX2cozscurw60Bd-YYojiJ-Tit31-sgJ3LIybKjofTM7g4dLa7anHYhlOf4MFyRzJKTEFZpLBopbZTyZcmZLgJjGpi-Juzs-NAUG  # AstraDB password
+  keyspace: aqidata  # Keyspace in AstraDB
+  table_name: table7  # List of Table name in AstraDB
+  region_name: eu-west-1 # Region name in AstraDB
+  output_file: artifacts/data_ingestion/data.csv # Path to save the downloaded dat
