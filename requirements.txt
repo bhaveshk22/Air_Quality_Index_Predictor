@@ -1,0 +1,7 @@
+pandas 
+matplotlib
+notebook
+python-box==6.0.2
+ensure
+cassandra-driver
+-e .
