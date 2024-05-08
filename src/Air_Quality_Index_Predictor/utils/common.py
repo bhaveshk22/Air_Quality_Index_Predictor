@@ -9,12 +9,12 @@ from typing import Any,Callable
 from functools import wraps
 
 breakpoints_dict = {
-    "PM2.5": [0, 30, 60, 90, 120, 250],
-    "PM10": [0, 50, 100, 250, 350, 430],
-    "O3": [0, 50, 100, 168, 208, 748],
-    "CO": [0, 1, 2, 10, 17, 34],
-    "NO2": [0, 40, 80, 180, 280, 400],
-    "SO2": [0, 40, 80, 380, 800, 1600]
+    "PM2.5": [30, 60, 90, 120, 250],
+    "PM10": [50, 100, 250, 350, 430],
+    "O3": [50, 100, 168, 208, 748],
+    "CO": [1, 2, 10, 17, 34],
+    "NO2": [40, 80, 180, 280, 400],
+    "SO2": [40, 80, 380, 800, 1600]
 }
 
 def ensure_annotations(func: Callable) -> Callable:
@@ -25,8 +25,6 @@ def ensure_annotations(func: Callable) -> Callable:
 
 @ensure_annotations
 def get_subindex(x: float, breakpoints: list) -> float:
-    if breakpoints[0] == 0:
-        return 0.0  # Return 0 if the first breakpoint is 0 to avoid division by zero
     if x <= breakpoints[0]:
         return x * 50 / breakpoints[0]
     elif x <= breakpoints[1]:
@@ -38,7 +36,7 @@ def get_subindex(x: float, breakpoints: list) -> float:
     elif x <= breakpoints[4]:
         return 300 + (x - breakpoints[3]) * 100 / (breakpoints[4] - breakpoints[3])
     elif x > breakpoints[4]:
-        return 400 + (x - breakpoints[4]) * 100 / (breakpoints[5] - breakpoints[4])
+        return 400 + (x - breakpoints[4]) * 100 / (breakpoints[4] - breakpoints[3])
     else:
         return 0
 
