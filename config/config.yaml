@@ -9,3 +9,8 @@ data_ingestion:
   table_name: table7  # List of Table name in AstraDB
   region_name: eu-west-1 # Region name in AstraDB
   output_file: artifacts/data_ingestion/data.csv # Path to save the downloaded dat
+
+
+data_transformation:
+  root_dir: artifacts/data_transformation
+  data_path: artifacts/data_ingestion/data.csv
