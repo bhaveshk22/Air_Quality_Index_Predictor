@@ -6,4 +6,7 @@ ensure
 seaborn
 plotly
 cassandra-driver
+scikit-learn
+statsmodels
+prophet
 -e .
