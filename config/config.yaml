@@ -39,4 +39,4 @@ data_ingestion:
 
 data_transformation:
   root_dir: artifacts/data_transformation
-  data_path: artifacts/data_ingestion/data.csv
+  data_path: artifacts/data_ingestion/pollutant_data.csv
